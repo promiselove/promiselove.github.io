@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>设计模式之策略者模式 | Amadeus的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="鸭子的父类，所有鸭子都继承自该类">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式之策略者模式">
+<meta property="og:url" content="http://yoursite.com/2017/03/13/strategy/index.html">
+<meta property="og:site_name" content="Amadeus的博客">
+<meta property="og:description" content="鸭子的父类，所有鸭子都继承自该类">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/css/images/strategy.jpg">
+<meta property="og:updated_time" content="2017-10-31T02:32:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式之策略者模式">
+<meta name="twitter:description" content="鸭子的父类，所有鸭子都继承自该类">
+<meta name="twitter:image" content="http://yoursite.com/css/images/strategy.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Amadeus的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/photoImg.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Amadeus</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">每一次失败都是成长的经历，每一次挫折都是成长的过程.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Amadeus</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Amadeus</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-strategy" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/13/strategy/" class="article-date">
+  	<time datetime="2017-03-13T07:51:21.000Z" itemprop="datePublished">2017-03-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式之策略者模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="鸭子的父类，所有鸭子都继承自该类"><a href="#鸭子的父类，所有鸭子都继承自该类" class="headerlink" title="鸭子的父类，所有鸭子都继承自该类"></a>鸭子的父类，所有鸭子都继承自该类</h3><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public abstract class Duck &#123;</div><div class="line">    public FlyBehavior flyBehavior;</div><div class="line">    public QuackBehavior quackBehavior;</div><div class="line"></div><div class="line">    public Duck()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    public abstract void display();</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 飞行行为接口</div><div class="line">     */</div><div class="line">    public void performFly()&#123;</div><div class="line">        flyBehavior.fly();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 叫行为接口</div><div class="line">     */</div><div class="line">    public void performQuack()&#123;</div><div class="line">        quackBehavior.quack();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 公共方法</div><div class="line">     */</div><div class="line">    public void swim()&#123;</div><div class="line">        System.out.println(&quot;所有鸭子都在水上浮着游泳,即使是诱饵鸭也是&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 动态设置飞行行为</div><div class="line">     * @param fb</div><div class="line">     */</div><div class="line">    public void setFlyBehavior(FlyBehavior fb)&#123;</div><div class="line">        flyBehavior = fb;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     *动态设置叫的行为</div><div class="line">     * @param qb</div><div class="line">     */</div><div class="line">    public void setQuackBehavior(QuackBehavior qb)&#123;</div><div class="line">        quackBehavior = qb;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="行为类接口"><a href="#行为类接口" class="headerlink" title="行为类接口"></a>行为类接口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public interface FlyBehavior &#123;</div><div class="line">    /**</div><div class="line">     * 飞行行为，所有实现该接口都必须重写该方法</div><div class="line">     */</div><div class="line">    public void fly();</div><div class="line">&#125;</div><div class="line">public interface QuackBehavior &#123;</div><div class="line">    /**</div><div class="line">     * 叫行为，所有实现该接口都必须重写该方法</div><div class="line">     */</div><div class="line">    public void quack();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="具体行为"><a href="#具体行为" class="headerlink" title="具体行为"></a>具体行为</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">public class FlyNoWay implements FlyBehavior &#123;</div><div class="line">    @Override</div><div class="line">    public void fly() &#123;</div><div class="line">        System.out.println(&quot;我不会飞，很尴尬&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class FlyRocketPowered implements FlyBehavior &#123;</div><div class="line">    @Override</div><div class="line">    public void fly() &#123;</div><div class="line">        System.out.println(&quot;坐着火箭的鸭子，你怕不怕？&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class FlyWithWings implements FlyBehavior &#123;</div><div class="line">    @Override</div><div class="line">    public void fly() &#123;</div><div class="line">        System.out.println(&quot;我会飞，I&apos;m fly&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class MuteQuack implements QuackBehavior &#123;</div><div class="line">    @Override</div><div class="line">    public void quack() &#123;</div><div class="line">        System.out.println(&quot;silence 我很安静，不会叫&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class Quack implements QuackBehavior &#123;</div><div class="line">    @Override</div><div class="line">    public void quack() &#123;</div><div class="line">        System.out.println(&quot;我是会叫的鸭子&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class Squeak implements QuackBehavior &#123;</div><div class="line">    @Override</div><div class="line">    public void quack() &#123;</div><div class="line">        System.out.println(&quot;我的叫声很尖，可以刺痛你的耳朵&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="模型鸭和绿头鸭"><a href="#模型鸭和绿头鸭" class="headerlink" title="模型鸭和绿头鸭"></a>模型鸭和绿头鸭</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public class ModeDuck extends Duck &#123;</div><div class="line">    /**</div><div class="line">     * 初始化构造方法,</div><div class="line">     * quackBehavior和flyBehavior对象都继承自父类Duck</div><div class="line">     */</div><div class="line">    public ModeDuck()&#123;</div><div class="line">        flyBehavior = new FlyNoWay();//初始化一个不会飞的鸭子</div><div class="line">        quackBehavior = new Quack();//初始化会叫</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void display() &#123;</div><div class="line">        System.out.println(&quot;我是一个模型鸭子&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class MallardDuck extends Duck &#123;</div><div class="line">    /**</div><div class="line">     * 初始化构造方法,</div><div class="line">     * quackBehavior和flyBehavior对象都继承自父类Duck</div><div class="line">     */</div><div class="line">    public MallardDuck()&#123;</div><div class="line">        quackBehavior = new Quack();//绿头鸭使用Quack类处理呱呱叫所以当 performQuack被调用时叫的职责被委托给Quack对象，而我们得到了真正的呱呱叫</div><div class="line">        flyBehavior = new FlyWithWings();//使用FlyWithWings作为其FlyBehavior的类型</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void display() &#123;</div><div class="line">        System.out.println(&quot;我是真的绿头鸭&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line"></div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">       Duck mallard = new MallardDuck();</div><div class="line">        mallard.performFly();</div><div class="line">        mallard.performQuack();</div><div class="line">        mallard.setQuackBehavior(new MuteQuack());</div><div class="line">        mallard.performQuack();</div><div class="line">        mallard.display();</div><div class="line">        </div><div class="line">        Duck model = new ModeDuck();</div><div class="line">        model.performFly();</div><div class="line">        model.setFlyBehavior(new FlyRocketPowered());</div><div class="line">        model.performFly();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>我会飞，I’m fly<br>我是会叫的鸭子<br>silence 我很安静，不会叫<br>我是真的绿头鸭</p>
+<p>我不会飞，很尴尬<br>坐着火箭的鸭子，你怕不怕？</p>
+<h3 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h3><p><img src="/css/images/strategy.jpg" alt="image"></p>
+<h3 id="可应用场景"><a href="#可应用场景" class="headerlink" title="可应用场景"></a>可应用场景</h3><ol>
+<li>多个类只区别在表现行为不同，可以使用Strategy模式，在运行时动态选择具体要执行的行为。</li>
+<li>需要在不同情况下使用不同的策略(算法)，或者策略还可能在未来用其它方式来实现。</li>
+<li>对客户隐藏具体策略(算法)的实现细节，彼此完全独立。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>如果想要新增加一个鸭子就新建一个鸭子类继承Duck类，实现鸭子的行为，如果想要添加鸭子的行为，可直接在Duck类里添加，所有的鸭子都继承自该类，可以动态设置鸭子的飞行和叫的行为。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/31/decorator/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          设计模式之装饰者模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/21/Linux安装jmagick/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux安装jmagick</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="strategy" data-title="设计模式之策略者模式" data-url="http://yoursite.com/2017/03/13/strategy/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"Amadeus"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Amadeus
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>设计模式之装饰者模式 | Amadeus的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是装饰者模式？定义：装饰模式指的是在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。它是通过创建一个包装对象，也就是装饰来包裹真实的对象。 设计原则1.开闭原则，即对修改关闭，对扩展开放2.多用组合，少用继承">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式之装饰者模式">
+<meta property="og:url" content="http://yoursite.com/2017/10/31/decorator/index.html">
+<meta property="og:site_name" content="Amadeus的博客">
+<meta property="og:description" content="什么是装饰者模式？定义：装饰模式指的是在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。它是通过创建一个包装对象，也就是装饰来包裹真实的对象。 设计原则1.开闭原则，即对修改关闭，对扩展开放2.多用组合，少用继承">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-31T03:09:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式之装饰者模式">
+<meta name="twitter:description" content="什么是装饰者模式？定义：装饰模式指的是在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。它是通过创建一个包装对象，也就是装饰来包裹真实的对象。 设计原则1.开闭原则，即对修改关闭，对扩展开放2.多用组合，少用继承">
+  
+    <link rel="alternative" href="/atom.xml" title="Amadeus的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/photoImg.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Amadeus</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">每一次失败都是成长的经历，每一次挫折都是成长的过程.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Amadeus</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Amadeus</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-decorator" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/31/decorator/" class="article-date">
+  	<time datetime="2017-10-31T02:30:03.000Z" itemprop="datePublished">2017-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式之装饰者模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是装饰者模式？"><a href="#什么是装饰者模式？" class="headerlink" title="什么是装饰者模式？"></a>什么是装饰者模式？</h3><p>定义：装饰模式指的是在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。它是通过创建一个包装对象，也就是装饰来包裹真实的对象。</p>
+<h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><p>1.开闭原则，即对修改关闭，对扩展开放<br>2.多用组合，少用继承</p>
+<a id="more"></a>
+<h3 id="以咖啡店售卖咖啡为例"><a href="#以咖啡店售卖咖啡为例" class="headerlink" title="以咖啡店售卖咖啡为例"></a>以咖啡店售卖咖啡为例</h3><p>咖啡是所有咖啡和咖啡调味品的基类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public abstract class Coffee &#123;</div><div class="line">    protected String name;</div><div class="line"></div><div class="line">    public String getName()&#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public abstract double getPrice();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>创建一个摩卡咖啡继承自该基类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Mocha extends Coffee &#123;</div><div class="line"></div><div class="line">    public Mocha()&#123;</div><div class="line">        name = &quot;摩卡咖啡&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public double getPrice() &#123;</div><div class="line">        return 20;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再来一个调味品抽象类继承咖啡基类，该类是所有调味品的父类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public abstract class Condiment extends Coffee &#123;</div><div class="line">    public abstract String getName();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>具体的咖啡装饰者继承自调味品类(给咖啡加点糖)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Sugar extends Condiment &#123;</div><div class="line">    Coffee coffee;</div><div class="line"></div><div class="line">    public Sugar(Coffee coffee)&#123;</div><div class="line">        this.coffee = coffee;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public String getName() &#123;</div><div class="line">        return coffee.getName()+&quot;,加糖&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public double getPrice() &#123;</div><div class="line">        return 1+coffee.getPrice();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再给咖啡加点奶<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Milk extends Condiment &#123;</div><div class="line">    Coffee coffee;</div><div class="line"></div><div class="line">    public Milk(Coffee coffee)&#123;</div><div class="line">        this.coffee = coffee;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public String getName() &#123;</div><div class="line">        return coffee.getName()+&quot;,加牛奶&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public double getPrice() &#123;</div><div class="line">        return 2+coffee.getPrice();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>好了，我们来写一个测试类测试一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        Coffee coffees = new Mocha();</div><div class="line">        System.out.println(coffees.getName()+&quot;-价格-&quot;+coffees.getPrice());</div><div class="line">        Sugar sugars = new Sugar(coffees);</div><div class="line">        System.out.println(sugars.getName()+&quot;-价格-&quot;+sugars.getPrice());</div><div class="line">        Milk milks = new Milk(sugars);</div><div class="line">        System.out.println(milks.getName()+&quot;-价格-&quot;+milks.getPrice());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果<br>摩卡咖啡-价格-20.0<br>摩卡咖啡,加糖-价格-21.0<br>摩卡咖啡,加糖,加牛奶-价格-23.0</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>如果有再多一个装饰者我们只需要扩展一个类去继承自调味品类，然后去装饰咖啡就行了。同样的再多一个咖啡品种我们只需要去继承自咖啡的基类就行了。java的io实现也是装饰者模式，都是围绕着InputStream或者OutputStream两个基类去扩展的。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/13/strategy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式之策略者模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="decorator" data-title="设计模式之装饰者模式" data-url="http://yoursite.com/2017/10/31/decorator/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"Amadeus"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Amadeus
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
