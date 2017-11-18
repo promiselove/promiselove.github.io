@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>抽象工厂模式 | Amadeus的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是抽象工厂模式提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类. 使用抽象工厂模式有什么好处，它和抽象工厂模式有什么区别？1.所有的工厂都是用来封装对象的创建2.简单工厂虽然不是真正的设计模式，但仍不失为一个简单的方法，可以将客户程序从具体类中解耦3.工厂方法使用继承：把对象的创建委托给子类，子类实现工厂方法来创建对象4.抽象工厂使用对象组合：对象的创建被实现在工厂接口所暴露">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="抽象工厂模式">
+<meta property="og:url" content="http://yoursite.com/2017/11/18/抽象工厂模式/index.html">
+<meta property="og:site_name" content="Amadeus的博客">
+<meta property="og:description" content="什么是抽象工厂模式提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类. 使用抽象工厂模式有什么好处，它和抽象工厂模式有什么区别？1.所有的工厂都是用来封装对象的创建2.简单工厂虽然不是真正的设计模式，但仍不失为一个简单的方法，可以将客户程序从具体类中解耦3.工厂方法使用继承：把对象的创建委托给子类，子类实现工厂方法来创建对象4.抽象工厂使用对象组合：对象的创建被实现在工厂接口所暴露">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-18T04:09:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="抽象工厂模式">
+<meta name="twitter:description" content="什么是抽象工厂模式提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类. 使用抽象工厂模式有什么好处，它和抽象工厂模式有什么区别？1.所有的工厂都是用来封装对象的创建2.简单工厂虽然不是真正的设计模式，但仍不失为一个简单的方法，可以将客户程序从具体类中解耦3.工厂方法使用继承：把对象的创建委托给子类，子类实现工厂方法来创建对象4.抽象工厂使用对象组合：对象的创建被实现在工厂接口所暴露">
+  
+    <link rel="alternative" href="/atom.xml" title="Amadeus的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/photoImg.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Amadeus</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">每一次失败都是成长的经历，每一次挫折都是成长的过程.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Amadeus</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Amadeus</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-抽象工厂模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/18/抽象工厂模式/" class="article-date">
+  	<time datetime="2017-11-18T03:05:20.000Z" itemprop="datePublished">2017-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      抽象工厂模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是抽象工厂模式"><a href="#什么是抽象工厂模式" class="headerlink" title="什么是抽象工厂模式"></a>什么是抽象工厂模式</h3><p>提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类.</p>
+<h3 id="使用抽象工厂模式有什么好处，它和抽象工厂模式有什么区别？"><a href="#使用抽象工厂模式有什么好处，它和抽象工厂模式有什么区别？" class="headerlink" title="使用抽象工厂模式有什么好处，它和抽象工厂模式有什么区别？"></a>使用抽象工厂模式有什么好处，它和抽象工厂模式有什么区别？</h3><p>1.所有的工厂都是用来封装对象的创建<br>2.简单工厂虽然不是真正的设计模式，但仍不失为一个简单的方法，可以将客户程序从具体类中解耦<br>3.工厂方法使用继承：把对象的创建委托给子类，子类实现工厂方法来创建对象<br>4.抽象工厂使用对象组合：对象的创建被实现在工厂接口所暴露出来的方法中<br>5.所有的工厂模式都通过减少应用程序和具体类之间的依赖促进松耦合<br>6.工厂方法允许类将实例化延迟到子类进行<br>7.抽象工厂创建相关的对象家族，而不需要依赖它们的具体类<br>8.依赖倒置原则指导我们避免依赖具体类型，而要尽量依赖抽象<br>9.工厂是很有威力的技巧，帮助我们针对抽象编程，而不需要针对具体类编程</p>
+<a id="more"></a>
+<h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><p>这次我们的抽象工厂模式来自于之前的工厂模式改装<br>我们先创建一个原料工厂，纽约有纽约的原料工厂，芝加哥有芝加哥的原料工厂，但是不管是哪个工厂都必须实现这个原料工厂<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 原料工厂接口</div><div class="line"> */</div><div class="line">public interface PizzaIngredientFactory &#123;</div><div class="line">    public Dough createDough();</div><div class="line">    public Sauce createSauce();</div><div class="line">    public Cheese createCheese();</div><div class="line">    public Veggies[] createVeggies();</div><div class="line">    public Pepperoni createPepperoni();</div><div class="line">    public Clams createClam();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来我们创建原料接口,所有的原料都必须实现这个接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 奶酪接口</div><div class="line"> */</div><div class="line">public interface Cheese &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 蛤蚌接口</div><div class="line"> */</div><div class="line">public interface Clams &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 面团接口</div><div class="line"> */</div><div class="line">public interface Dough &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 意大利香肠</div><div class="line"> */</div><div class="line">public interface Pepperoni &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 调料</div><div class="line"> */</div><div class="line">public interface Sauce &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 蔬菜</div><div class="line"> */</div><div class="line">public interface Veggies &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>好了，我们现在已经拥有了制作披萨的所有原料接口，接下来创建一组制作披萨的原料<br>先制作纽约披萨店制作披萨所需要的原料<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 纽约人喜欢吃新鲜的蛤蚌</div><div class="line"> */</div><div class="line">public class FreshClams implements Clams &#123;</div><div class="line">    public FreshClams()&#123;</div><div class="line">        System.out.println(&quot;纽约风格的新鲜蛤蜊&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 纽约版本的调料</div><div class="line"> */</div><div class="line">public class MarinaraSauce implements Sauce &#123;</div><div class="line">    public MarinaraSauce()&#123;</div><div class="line">        System.out.println(&quot;纽约风格酱料&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 纽约风格的奶酪</div><div class="line"> */</div><div class="line">public class ReggianoCheese implements Cheese&#123;</div><div class="line">    public ReggianoCheese()&#123;</div><div class="line">        System.out.println(&quot;纽约风格奶酪&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 纽约风格的意大利肠</div><div class="line"> */</div><div class="line">public class SlicedPepperoni implements Pepperoni&#123;</div><div class="line">    public SlicedPepperoni()&#123;</div><div class="line">        System.out.println(&quot;纽约风格意大利肠&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 纽约版本的面团</div><div class="line"> */</div><div class="line">public class ThinCrustDough implements Dough &#123;</div><div class="line">    public ThinCrustDough()&#123;</div><div class="line">        System.out.println(&quot;勤劳的纽约人自己揉的面团&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再来创建芝加哥披萨店创建披萨所需要的原料<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 芝加哥风格奶酪</div><div class="line"> */</div><div class="line">public class ChicagoCheese implements Cheese&#123;</div><div class="line">    public ChicagoCheese()&#123;</div><div class="line">        System.out.println(&quot;芝加哥风格奶酪&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 芝加哥人自己揉的面团</div><div class="line"> */</div><div class="line">public class ChicagoDough implements Dough &#123;</div><div class="line">    public ChicagoDough()&#123;</div><div class="line">        System.out.println(&quot;芝加哥人自己揉的面团&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 芝加哥风味意大利肠</div><div class="line"> */</div><div class="line">public class ChicagoPepperoni implements Pepperoni&#123;</div><div class="line">    public ChicagoPepperoni()&#123;</div><div class="line">        System.out.println(&quot;芝加哥风味意大利肠&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 芝加哥风格酱料</div><div class="line"> */</div><div class="line">public class ChicagoSauce implements Sauce &#123;</div><div class="line">    public ChicagoSauce()&#123;</div><div class="line">        System.out.println(&quot;芝加哥风格酱料&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 芝加哥人不喜欢新鲜的蛤蜊</div><div class="line"> */</div><div class="line">public class ChicagoClams implements Clams &#123;</div><div class="line">    public ChicagoClams()&#123;</div><div class="line">        System.out.println(&quot;芝加哥人不喜欢新鲜的蛤蜊&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再来一个通用的蔬菜<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 大蒜</div><div class="line"> */</div><div class="line">public class Garlic implements Veggies&#123;</div><div class="line">    public Garlic()&#123;</div><div class="line">        System.out.println(&quot;添加一点大蒜&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 蘑菇</div><div class="line"> */</div><div class="line">public class Mushroom implements Veggies&#123;</div><div class="line">    public Mushroom()&#123;</div><div class="line">        System.out.println(&quot;蘑菇来一点&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 洋葱</div><div class="line"> */</div><div class="line">public class Onion implements Veggies&#123;</div><div class="line">    public Onion()&#123;</div><div class="line">        System.out.println(&quot;洋葱加一点&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 红辣椒</div><div class="line"> */</div><div class="line">public class Redpepper implements Veggies&#123;</div><div class="line">    public Redpepper()&#123;</div><div class="line">        System.out.println(&quot;红辣椒还是很不错的&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们已经有了披萨的原料，现在我们创建一个披萨父类，所有披萨都要继承自该类，该类里有制作披萨的所有原料<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public abstract class Pizza &#123;</div><div class="line">    String name;</div><div class="line">    Dough dough;//面团</div><div class="line">    Sauce sauce;//佐料 调味料</div><div class="line">    Veggies[] veggies;//蔬菜</div><div class="line">    Cheese cheese;//奶酪</div><div class="line">    Pepperoni pepperoni;//意大利切片肠</div><div class="line">    Clams clams;//蛤蚌</div><div class="line">    abstract void prepare();</div><div class="line"></div><div class="line">    void bake()&#123;//烘烤</div><div class="line">        System.out.println(&quot;烘烤25分钟到30分钟...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void cut()&#123;//切片</div><div class="line">        System.out.println(&quot;把这个pizza按照对角线大卸八块...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void box()&#123;//打包</div><div class="line">        System.out.println(&quot;最后把pizza打包...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void setName(String name)&#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line">    public String getName()&#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>现在我们要开始加工披萨了，先创建纽纽约和芝加哥的原料工厂<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 纽约原料工厂</div><div class="line"> */</div><div class="line">public class NYPizzaIngredientFactory implements PizzaIngredientFactory &#123;</div><div class="line">    @Override</div><div class="line">    public Dough createDough() &#123;</div><div class="line">        return new ThinCrustDough();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Sauce createSauce() &#123;</div><div class="line">        return new MarinaraSauce();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Cheese createCheese() &#123;</div><div class="line">        return new ReggianoCheese();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Veggies[] createVeggies() &#123;</div><div class="line">        Veggies[] veggies = &#123;new Garlic(),new Onion(),new Mushroom(),new Redpepper()&#125;;</div><div class="line">        return veggies;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Pepperoni createPepperoni() &#123;</div><div class="line">        return new SlicedPepperoni();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Clams createClam() &#123;</div><div class="line">        return new FreshClams();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 芝加哥原料工厂</div><div class="line"> */</div><div class="line">public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory &#123;</div><div class="line">    @Override</div><div class="line">    public Dough createDough() &#123;</div><div class="line">        return new ChicagoDough();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Sauce createSauce() &#123;</div><div class="line">        return new ChicagoSauce();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Cheese createCheese() &#123;</div><div class="line">        return new ChicagoCheese();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Veggies[] createVeggies() &#123;</div><div class="line">        Veggies[] veggies = &#123;new Garlic(),new Onion(),new Mushroom(),new Redpepper()&#125;;</div><div class="line">        return veggies;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Pepperoni createPepperoni() &#123;</div><div class="line">        return new ChicagoPepperoni();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Clams createClam() &#123;</div><div class="line">        return new ChicagoClams();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>好了我们现在和工厂已经谈妥了，他们会为我们持续供应原材料<br>现在我们要开两个店,首先我们创建一个总店，所有的店面都必须继承自该类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public abstract class PizzaStore &#123;</div><div class="line"></div><div class="line">    public Pizza orderPizza(String type)&#123;</div><div class="line">        Pizza pizza;</div><div class="line">        pizza = createPizza(type);</div><div class="line">        pizza.prepare();</div><div class="line">        pizza.bake();</div><div class="line">        pizza.cut();</div><div class="line">        pizza.box();</div><div class="line">        return pizza;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    protected abstract Pizza createPizza(String type);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>现在我们来开具体的店铺<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 纽约披萨店</div><div class="line"> */</div><div class="line">public class NYCPizzaStore extends PizzaStore&#123;</div><div class="line">    @Override</div><div class="line">    protected Pizza createPizza(String type) &#123;</div><div class="line">        Pizza pizza = null;</div><div class="line">        PizzaIngredientFactory pizzaIngredientFactory = new NYPizzaIngredientFactory();</div><div class="line">        if(&quot;cheese&quot;.equals(type))&#123;</div><div class="line">            pizza = new CheesePizza(pizzaIngredientFactory);</div><div class="line">            pizza.setName(&quot;NYC风格的奶酪披萨&quot;);</div><div class="line">        &#125;else if(&quot;clam&quot;.equals(type))&#123;</div><div class="line">            pizza = new ClamPizza(pizzaIngredientFactory);</div><div class="line">            pizza.setName(&quot;NYC风格的蛤蜊披萨&quot;);</div><div class="line">        &#125;</div><div class="line">        return pizza;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 芝加哥披萨店</div><div class="line"> */</div><div class="line">public class ChicagoPizzaStore extends PizzaStore&#123;</div><div class="line">    @Override</div><div class="line">    protected Pizza createPizza(String type) &#123;</div><div class="line">        Pizza pizza = null;</div><div class="line">        PizzaIngredientFactory pizzaIngredientFactory = new ChicagoPizzaIngredientFactory();</div><div class="line">        if(&quot;cheese&quot;.equals(type))&#123;</div><div class="line">            pizza = new CheesePizza(pizzaIngredientFactory);</div><div class="line">            pizza.setName(&quot;芝加哥风味的奶酪披萨&quot;);</div><div class="line">        &#125;else if(&quot;clam&quot;.equals(type))&#123;</div><div class="line">            pizza = new ClamPizza(pizzaIngredientFactory);</div><div class="line">            pizza.setName(&quot;芝加哥风味的蛤蜊披萨&quot;);</div><div class="line">        &#125;</div><div class="line">        return pizza;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>至此我们已经完成了所有的从原料到到工厂到店面，现在我们已经可以开张了<br>我们目前有两种口味的披萨<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 奶酪披萨</div><div class="line"> */</div><div class="line">public class CheesePizza extends Pizza&#123;</div><div class="line">    PizzaIngredientFactory pizzaIngredientFactory;</div><div class="line"></div><div class="line">    public CheesePizza(PizzaIngredientFactory pizzaIngredientFactory)&#123;</div><div class="line">        this.pizzaIngredientFactory = pizzaIngredientFactory;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    void prepare() &#123;</div><div class="line">        System.out.println(&quot;Preparing准备 &quot;+name);</div><div class="line">        dough = pizzaIngredientFactory.createDough();</div><div class="line">        sauce = pizzaIngredientFactory.createSauce();</div><div class="line">        cheese = pizzaIngredientFactory.createCheese();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 蛤蜊披萨</div><div class="line"> */</div><div class="line">public class ClamPizza extends Pizza&#123;</div><div class="line">    PizzaIngredientFactory pizzaIngredientFactory;</div><div class="line"></div><div class="line">    public ClamPizza(PizzaIngredientFactory pizzaIngredientFactory)&#123;</div><div class="line">        this.pizzaIngredientFactory = pizzaIngredientFactory;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    void prepare() &#123;</div><div class="line">        System.out.println(&quot;Preparing准备 &quot;+name);</div><div class="line">        dough = pizzaIngredientFactory.createDough();</div><div class="line">        sauce = pizzaIngredientFactory.createSauce();</div><div class="line">        cheese = pizzaIngredientFactory.createCheese();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在已经万事俱备只欠东风了(订单)<br>写个测试类测试一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        System.out.println(&quot;Ethan喜欢吃纽约披萨&quot;);</div><div class="line">        PizzaStore nycPizzaStore = new NYCPizzaStore();</div><div class="line">        nycPizzaStore.orderPizza(&quot;cheese&quot;);</div><div class="line">        System.out.println();</div><div class="line"></div><div class="line">        System.out.println(&quot;Joel相对于纽约披萨更喜欢芝加哥披萨&quot;);</div><div class="line">        PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();</div><div class="line">        chicagoPizzaStore.orderPizza(&quot;clam&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果</p>
+<p>Ethan喜欢吃纽约披萨<br>Preparing准备 NYC风格的奶酪披萨<br>勤劳的纽约人自己揉的面团<br>纽约风格酱料<br>纽约风格奶酪<br>烘烤25分钟到30分钟…<br>把这个pizza按照对角线大卸八块…<br>最后把pizza打包…</p>
+<p>Joel相对于纽约披萨更喜欢芝加哥披萨<br>Preparing准备 芝加哥风味的蛤蜊披萨<br>芝加哥人自己揉的面团<br>芝加哥风格酱料<br>芝加哥风格奶酪<br>烘烤25分钟到30分钟…<br>把这个pizza按照对角线大卸八块…<br>最后把pizza打包…</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>使用工厂模式和抽象工厂模式都可以将对象的创建封装起来，以便将代码从具体的实现类中解耦。<br>多用组合，例如工厂模式我们要创建纽约风格的奶酪味披萨，我们这里就直接直接是奶酪味的披萨再和纽约组合起来，这样就实现了解耦</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/11/工厂模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">工厂模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="抽象工厂模式" data-title="抽象工厂模式" data-url="http://yoursite.com/2017/11/18/抽象工厂模式/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"Amadeus"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Amadeus
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
