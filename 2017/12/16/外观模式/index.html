@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>外观模式 | Amadeus的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是外观模式提供一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="外观模式">
+<meta property="og:url" content="http://yoursite.com/2017/12/16/外观模式/index.html">
+<meta property="og:site_name" content="Amadeus的博客">
+<meta property="og:description" content="什么是外观模式提供一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-16T03:29:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="外观模式">
+<meta name="twitter:description" content="什么是外观模式提供一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用">
+  
+    <link rel="alternative" href="/atom.xml" title="Amadeus的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/photoImg.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Amadeus</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">每一次失败都是成长的经历，每一次挫折都是成长的过程.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Amadeus</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Amadeus</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-外观模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/16/外观模式/" class="article-date">
+  	<time datetime="2017-12-16T03:28:25.000Z" itemprop="datePublished">2017-12-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      外观模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是外观模式"><a href="#什么是外观模式" class="headerlink" title="什么是外观模式"></a>什么是外观模式</h3><p>提供一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用</p>
+<a id="more"></a>
+<h3 id="一个使用了外观模式的小例子"><a href="#一个使用了外观模式的小例子" class="headerlink" title="一个使用了外观模式的小例子"></a>一个使用了外观模式的小例子</h3><p>在这里我们使用了对象之间的组合<br>我们想要在看电影的时候让爆米花机工作然后把各种音响设备调成打开状态，没有使用外观模式之前我们要一个一个设备区打开，然后看完了之后我们要再一个一个设备区关闭，这很麻烦，有没有可能然我们有一键打开和一键关闭呢？接下来的小例子也许能帮我们实现<br>首先我们有一些设备<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* 放大器</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Amplifier</span> </span>&#123;</div><div class="line">Tuner tuner;</div><div class="line">DvdPlayer dvdPlayer;</div><div class="line">CdPlayer cdPlayer;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"放大器打开"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"放大器关闭"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCd</span><span class="params">(CdPlayer cdPlayer)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.cdPlayer = cdPlayer;</div><div class="line">System.out.println(<span class="string">"设置cd"</span>);</div><div class="line">cdPlayer.on();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDvd</span><span class="params">(DvdPlayer dvdPlayer)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.dvdPlayer = dvdPlayer;</div><div class="line">System.out.println(<span class="string">"设置dvd"</span>);</div><div class="line">dvdPlayer.on();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//立体声</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStereoSound</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"设置立体声"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//环绕声</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSurroundSound</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"设置环绕声"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTuner</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"Tuner调音"</span>);</div><div class="line">tuner.on();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVolume</span><span class="params">(<span class="keyword">int</span> numbner)</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"调节音量"</span>+numbner);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* CD播放器</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CdPlayer</span> </span>&#123;</div><div class="line">Amplifier amplifier;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">CdPlayer</span><span class="params">(Amplifier amplifier)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.amplifier = amplifier;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"cd打开"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"cd关闭"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">eject</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"弹出cd"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pause</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"cd暂停"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"cd播放"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"cd停止"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* Dvd播放器</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DvdPlayer</span> </span>&#123;</div><div class="line">Amplifier amplifier;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">DvdPlayer</span><span class="params">(Amplifier amplifier)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.amplifier = amplifier;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"Dvd打开"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"Dvd关闭"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">eject</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"弹出dvd"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pause</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"dvd暂停"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">play</span><span class="params">(String movie)</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"Dvd播放"</span>+movie);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSurroundAudio</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"设置dvd环绕音"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTwoChannelAudio</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"双通道音频设置"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"dvd停止"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* 爆米花机</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PopcornPopper</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"打开爆米花机"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"关闭爆米花机"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"制作爆米花"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* 投影仪</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Projector</span> </span>&#123;</div><div class="line">DvdPlayer dvdPlayer;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Projector</span><span class="params">(DvdPlayer dvdPlayer)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.dvdPlayer = dvdPlayer;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"打开投影仪"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"关闭投影仪"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">tvMode</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"投影仪设置为tv模式"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">wideScreeenMode</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"投影仪设置为屏幕模式"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* 屏幕</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Screen</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"屏幕收起"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"屏幕放下"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* 剧场灯光</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TheaterLights</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"打开剧场灯光"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"关闭剧场灯光"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dim</span><span class="params">(<span class="keyword">int</span> number)</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"昏暗灯光模式"</span>+number);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* 调音</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tuner</span> </span>&#123;</div><div class="line">Amplifier amplifier;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Tuner</span><span class="params">(Amplifier amplifier)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.amplifier = amplifier;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"调音器打开"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"调音器关闭"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAm</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"am调频"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFm</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"fm调频"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFrequency</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"设置频率"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>好了，我们的设备现在已经有了，就要开始用外观模式来打开这些家庭影院了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* 家庭影院的外观</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeTheaterFacade</span> </span>&#123;</div><div class="line">Amplifier amplifier;</div><div class="line">Tuner tuner;</div><div class="line">DvdPlayer dvdPlayer;</div><div class="line">CdPlayer cdPlayer;</div><div class="line">Projector projector;</div><div class="line">TheaterLights theaterLights;</div><div class="line">Screen screen;</div><div class="line">PopcornPopper popcornPopper;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span>  <span class="title">HomeTheaterFacade</span><span class="params">(Amplifier amplifier,</span></span></div><div class="line"><span class="function"><span class="params">Tuner tuner,</span></span></div><div class="line"><span class="function"><span class="params">DvdPlayer dvdPlayer,</span></span></div><div class="line"><span class="function"><span class="params">CdPlayer cdPlayer,</span></span></div><div class="line"><span class="function"><span class="params">Projector projector,</span></span></div><div class="line"><span class="function"><span class="params">TheaterLights theaterLights,</span></span></div><div class="line"><span class="function"><span class="params">Screen screen,</span></span></div><div class="line"><span class="function"><span class="params">PopcornPopper popcornPopper)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.amplifier = amplifier;</div><div class="line"><span class="keyword">this</span>.tuner = tuner;</div><div class="line"><span class="keyword">this</span>.dvdPlayer = dvdPlayer;</div><div class="line"><span class="keyword">this</span>.cdPlayer = cdPlayer;</div><div class="line"><span class="keyword">this</span>.projector = projector;</div><div class="line"><span class="keyword">this</span>.theaterLights = theaterLights;</div><div class="line"><span class="keyword">this</span>.screen = screen;</div><div class="line"><span class="keyword">this</span>.popcornPopper = popcornPopper;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">watchMovie</span><span class="params">(String movie)</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"准备开始看电影咯"</span>);</div><div class="line">popcornPopper.on();</div><div class="line">popcornPopper.pop();</div><div class="line">theaterLights.dim(<span class="number">10</span>);</div><div class="line">screen.down();</div><div class="line">projector.on();</div><div class="line">projector.wideScreeenMode();</div><div class="line">amplifier.on();</div><div class="line">amplifier.setDvd(dvdPlayer);</div><div class="line">amplifier.setSurroundSound();</div><div class="line">amplifier.setVolume(<span class="number">5</span>);</div><div class="line">dvdPlayer.on();</div><div class="line">dvdPlayer.play(movie);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endMovie</span><span class="params">()</span></span>&#123;</div><div class="line">System.out.println(<span class="string">"关闭电影"</span>);</div><div class="line">popcornPopper.off();</div><div class="line">theaterLights.on();</div><div class="line">screen.up();</div><div class="line">projector.off();</div><div class="line">amplifier.off();</div><div class="line">dvdPlayer.stop();</div><div class="line">dvdPlayer.eject();</div><div class="line">dvdPlayer.off();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在外观模式里我们所有的设备的打开都有统一的一个方法去实现，只需去掉用就行了<br>接下来测试下一下我们的代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeTheaterTest</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">Amplifier amplifier = <span class="keyword">new</span> Amplifier();</div><div class="line">Tuner tuner = <span class="keyword">new</span> Tuner(amplifier);</div><div class="line">DvdPlayer dvdPlayer = <span class="keyword">new</span> DvdPlayer(amplifier);</div><div class="line">CdPlayer cdPlayer = <span class="keyword">new</span> CdPlayer(amplifier);</div><div class="line">Projector projector = <span class="keyword">new</span> Projector(dvdPlayer);</div><div class="line">Screen screen = <span class="keyword">new</span> Screen();</div><div class="line">TheaterLights theaterLights = <span class="keyword">new</span> TheaterLights();</div><div class="line">PopcornPopper popcornPopper = <span class="keyword">new</span> PopcornPopper();</div><div class="line">HomeTheaterFacade homeTheaterFacade = <span class="keyword">new</span> HomeTheaterFacade(amplifier,tuner,dvdPlayer,cdPlayer,projector,theaterLights,screen,popcornPopper);</div><div class="line">homeTheaterFacade.watchMovie(<span class="string">"肖申克的救赎"</span>);</div><div class="line">System.out.println(<span class="string">"----------"</span>);</div><div class="line">homeTheaterFacade.endMovie();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>准备开始看电影咯<br>打开爆米花机<br>制作爆米花<br>昏暗灯光模式10<br>屏幕放下<br>打开投影仪<br>投影仪设置为屏幕模式<br>放大器打开<br>设置dvd<br>Dvd打开<br>设置环绕声<br>调节音量5<br>Dvd打开<br>Dvd播放肖申克的救赎<br>这里是分割线————<br>关闭电影<br>关闭爆米花机<br>打开剧场灯光<br>屏幕收起<br>关闭投影仪<br>放大器关闭<br>dvd停止<br>弹出dvd<br>Dvd关闭</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.当需要简化并统一一个很大的接口或者一群复杂的接口的时候我们使用外观模式<br>2.外观模式将客户从一个复杂的子系统中解耦<br>3.实现一个外观需要将子系统组合进外观中，然后将工作委托给子系统执行<br>4.我们可以为子系统实现一个以上的外观</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/09/适配器模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">适配器模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="外观模式" data-title="外观模式" data-url="http://yoursite.com/2017/12/16/外观模式/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"Amadeus"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+  <section id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="外观模式"></div>
+<script>
+  (function(){
+    var appid = 'cytlextJ9',
+    conf = 'cbb03c7918b5340e40032e087d2662af';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+</script>
+  </section>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Amadeus
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
