@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>模板方法 | Amadeus的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是模板方法模式在一个方法中定义一个算法骨架，而将一些步骤延迟到子类中，模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模板方法">
+<meta property="og:url" content="http://yoursite.com/2017/12/23/模板方法/index.html">
+<meta property="og:site_name" content="Amadeus的博客">
+<meta property="og:description" content="什么是模板方法模式在一个方法中定义一个算法骨架，而将一些步骤延迟到子类中，模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-23T03:31:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模板方法">
+<meta name="twitter:description" content="什么是模板方法模式在一个方法中定义一个算法骨架，而将一些步骤延迟到子类中，模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。">
+  
+    <link rel="alternative" href="/atom.xml" title="Amadeus的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/photoImg.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Amadeus</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">每一次失败都是成长的经历，每一次挫折都是成长的过程.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Amadeus</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Amadeus</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-模板方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/23/模板方法/" class="article-date">
+  	<time datetime="2017-12-23T02:46:21.000Z" itemprop="datePublished">2017-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模板方法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是模板方法模式"><a href="#什么是模板方法模式" class="headerlink" title="什么是模板方法模式"></a>什么是模板方法模式</h3><p>在一个方法中定义一个算法骨架，而将一些步骤延迟到子类中，模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。</p>
+<a id="more"></a>
+<h3 id="一个小例子"><a href="#一个小例子" class="headerlink" title="一个小例子"></a>一个小例子</h3><p>我们要泡茶和冲咖啡，而泡茶和冲咖啡有些相同的地方，也有些不同的地方，比如烧水和把饮料（咖啡或者茶）装进杯子这些步骤都是一样的，不同的是咖啡可能和茶制成后添加的调味剂不一样<br>这样的话我们可以写一个基类把所有相同的步骤抽取出来，而不同的步骤延伸到子类里去进行<br>首先是含有咖啡因饮料的基类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 含有咖啡因饮料基类</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">CaffeineBeverage</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">prepareRecipe</span><span class="params">()</span></span>&#123;</div><div class="line">        boilWater();<span class="comment">//煮水</span></div><div class="line">        brew();<span class="comment">//冲泡</span></div><div class="line">        pourInCup();<span class="comment">//装进杯子</span></div><div class="line">        <span class="keyword">if</span>(customerWantsCondiments())&#123;</div><div class="line">            addCondiments();<span class="comment">//加料</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">brew</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">addCondiments</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">boilWater</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"把水煮沸"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pourInCup</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"倒进杯子"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//钩子</span></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">customerWantsCondiments</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>咖啡<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 咖啡</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Coffee</span> <span class="keyword">extends</span> <span class="title">CaffeineBeverage</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">brew</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"冲泡咖啡"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addCondiments</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"加点牛奶和糖"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>茶<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 茶</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tea</span> <span class="keyword">extends</span> <span class="title">CaffeineBeverage</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">brew</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"冲泡茶叶"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addCondiments</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"加点柠檬"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        CaffeineBeverage tea = <span class="keyword">new</span> Tea();</div><div class="line">        tea.prepareRecipe();</div><div class="line"></div><div class="line">        CaffeineBeverage coffee = <span class="keyword">new</span> Coffee();</div><div class="line">        coffee.prepareRecipe();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果<br>把水煮沸<br>冲泡茶叶<br>倒进杯子<br>加点柠檬<br>把水煮沸<br>冲泡咖啡<br>倒进杯子<br>加点牛奶和糖</p>
+<p>我们把相同的步骤都放到基类里去执行了，而子类只处理关于自己的步骤就好了，这就是一种简单的模板方法的实现<br>但是有的客户可能有些特殊的要求，比如有的不喜欢在咖啡或者茶里添加一些调料，他们喜欢喝原汁原味的，这个时候钩子就产生了用途</p>
+<h4 id="什么是钩子？"><a href="#什么是钩子？" class="headerlink" title="什么是钩子？"></a>什么是钩子？</h4><p>钩子是一种被声明在抽象类中的方法，但是只有空的或者默认的实现。钩子的存在可以让子类有能力对算法的不同点进行挂钩，要不要挂钩由子类自己决定</p>
+<p>上边的咖啡因基类CaffeineBeverage已经实现了默认的钩子，现在我们让子类来决定要不要使用钩子<br>首先是咖啡类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 咖啡钩子类</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CoffeeWithHook</span> <span class="keyword">extends</span> <span class="title">CaffeineBeverage</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">brew</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"coffee"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addCondiments</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"加糖和牛奶"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">customerWantsCondiments</span><span class="params">()</span></span>&#123;</div><div class="line">        String answer = getUserInput();</div><div class="line">        <span class="keyword">if</span>(answer.toLowerCase().startsWith(<span class="string">"y"</span>))&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getUserInput</span><span class="params">()</span></span>&#123;</div><div class="line">        String answer = <span class="keyword">null</span>;</div><div class="line">        System.out.println(<span class="string">"是否想要加点牛奶和咖啡呢(y/n)?"</span>);</div><div class="line">        BufferedReader bufferedReader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            answer = bufferedReader.readLine();</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            System.out.println(<span class="string">"IOException"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(answer == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"no"</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> answer;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>茶类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 茶的钩子类</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TeaWithHook</span> <span class="keyword">extends</span> <span class="title">CaffeineBeverage</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">brew</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Tea"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addCondiments</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"加点柠檬"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">customerWantsCondiments</span><span class="params">()</span></span>&#123;</div><div class="line">        String answer = getUserInput();</div><div class="line">        <span class="keyword">if</span>(answer.toLowerCase().startsWith(<span class="string">"y"</span>))&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getUserInput</span><span class="params">()</span></span>&#123;</div><div class="line">        String answer = <span class="keyword">null</span>;</div><div class="line">        System.out.println(<span class="string">"是否想要加点柠檬呢(y/n)?"</span>);</div><div class="line">        BufferedReader bufferedReader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            answer = bufferedReader.readLine();</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            System.out.println(<span class="string">"IOException"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(answer == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"no"</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> answer;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试类中的代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        <span class="comment">/*CaffeineBeverage tea = new Tea();</span></div><div class="line"><span class="comment">        tea.prepareRecipe();</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">        CaffeineBeverage coffee = new Coffee();</span></div><div class="line"><span class="comment">        coffee.prepareRecipe();*/</span></div><div class="line"></div><div class="line">        CaffeineBeverage coffeeWithHook = <span class="keyword">new</span> CoffeeWithHook();</div><div class="line">        CaffeineBeverage teaWithHook = <span class="keyword">new</span> TeaWithHook();</div><div class="line">        System.out.println(<span class="string">"\nmaking tea"</span>);</div><div class="line">        teaWithHook.prepareRecipe();</div><div class="line">        System.out.println(<span class="string">"\nmaking coffee"</span>);</div><div class="line">        coffeeWithHook.prepareRecipe();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果</p>
+<p>making tea<br>把水煮沸<br>Tea<br>倒进杯子<br>是否想要加点柠檬呢(y/n)?<br>y<br>加点柠檬</p>
+<p>making coffee<br>把水煮沸<br>coffee<br>倒进杯子<br>是否想要加点牛奶和咖啡呢(y/n)?<br>n<br>加了钩子之后我们看到子类可以决定到底是否要调用addCondiments方法来为饮料加点料</p>
+<h3 id="一个鸭子排序的模板方法"><a href="#一个鸭子排序的模板方法" class="headerlink" title="一个鸭子排序的模板方法"></a>一个鸭子排序的模板方法</h3><p>我们有一个鸭子类实现了Comparable接口,并且重写了compareTo方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 鸭子类</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> <span class="keyword">implements</span> <span class="title">Comparable</span> </span>&#123;</div><div class="line">    String name;</div><div class="line">    <span class="keyword">int</span> weight;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Duck</span><span class="params">(String name,<span class="keyword">int</span> weight)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">        <span class="keyword">this</span>.weight = weight;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> name+<span class="string">" weight"</span>+weight;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object o)</span> </span>&#123;</div><div class="line">        Duck otherDuck = (Duck) o;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.weight &lt; otherDuck.weight)&#123;</div><div class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.weight == otherDuck.weight)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;<span class="comment">//(this.weight &gt; otherDuck.weight)</span></div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来我们要对一堆鸭子根据体重排序<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        Duck[] ducks = &#123;</div><div class="line">                <span class="keyword">new</span> Duck(<span class="string">"daffy"</span>,<span class="number">8</span>),</div><div class="line">                <span class="keyword">new</span> Duck(<span class="string">"Dewey"</span>,<span class="number">2</span>),</div><div class="line">                <span class="keyword">new</span> Duck(<span class="string">"Howard"</span>,<span class="number">7</span>),</div><div class="line">                <span class="keyword">new</span> Duck(<span class="string">"Louie"</span>,<span class="number">2</span>),</div><div class="line">                <span class="keyword">new</span> Duck(<span class="string">"Donald"</span>,<span class="number">10</span>),</div><div class="line">                <span class="keyword">new</span> Duck(<span class="string">"Huey"</span>,<span class="number">2</span>)</div><div class="line">        &#125;;</div><div class="line">        System.out.println(<span class="string">"\n开始排序鸭子之前"</span>);</div><div class="line">        display(ducks);</div><div class="line">        Arrays.sort(ducks);</div><div class="line">        System.out.println(<span class="string">"\n排序鸭子后"</span>);</div><div class="line">        display(ducks);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(Duck[] ducks)</span></span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,size = ducks.length; i &lt; size; i++)&#123;</div><div class="line">            System.out.println(ducks[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们使用了Arrays.sort方法实现，输出结果如下</p>
+<p>开始排序鸭子之前<br>daffy weight8<br>Dewey weight2<br>Howard weight7<br>Louie weight2<br>Donald weight10<br>Huey weight2</p>
+<p>排序鸭子后<br>Dewey weight2<br>Louie weight2<br>Huey weight2<br>Howard weight7<br>daffy weight8<br>Donald weight10</p>
+<p>我们观察鸭子排序内部的工作<br>1.首先我们需要一个鸭子数组：<br>Duckp[] ducks = {new Duck(“daffy”,8),…..}<br>2.然后调用Arrays类的sort()方法，并传入鸭子数组：<br>Arrays.sort(ducks);<br>for(int i = low; i &lt; high; i++){<br>    …compareTo()…<br>    …swap()…<br>}<br>sort()方法控制算法，没有类可以改变这一点。sort()依赖一个Comparable类提供的compareTo()的实现。<br>3.想要排序一个数组，需要一次次的比较两个项目，直到整个数组都排序完毕<br>ducks[0].compareTo(ducks[1]);<br>4.如果鸭子的次序不对，就用Arrays的swap()方法将两者对调<br>5.排序方法会持续的比较并对调鸭子，直到整个数组的次序是正确的。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.”模板方法”定义了算法的步骤，把这些步骤的实现延迟到子类<br>2.模板方法为我们提供了一种代码复用的技巧<br>3.模板方法的抽象类可以定义具体方法，抽象方法和钩子<br>4.抽象方法由子类实现<br>5.钩子是一种方法，它在抽象类中不做事，或者只做默认的事，子类可以选择要不要去覆盖它<br>6.为了防止子类改变模板方法中的算法，可以将模板方法声明为final<br>7.“好莱坞”原则告诉我们，将决策权放在放在高层模块中，以便决定如何以及何时调用底层模块<br>8.真实的模板方法使用犹如上边的鸭子排序一样，很难一眼被我们认识<br>9.策略模式和模板方法模式都封装算法，一个用组合，一个用继承<br>10.工厂方法是模板方法的一种特殊版本</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/16/外观模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">外观模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="模板方法" data-title="模板方法" data-url="http://yoursite.com/2017/12/23/模板方法/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"Amadeus"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+  <section id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="模板方法"></div>
+<script>
+  (function(){
+    var appid = 'cytlextJ9',
+    conf = 'cbb03c7918b5340e40032e087d2662af';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+</script>
+  </section>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Amadeus
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
