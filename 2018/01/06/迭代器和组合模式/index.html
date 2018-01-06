@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>迭代器和组合模式 | Amadeus的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是迭代器、组合模式迭代器模式：提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露内部的表示。组合模式：允许你将组合对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="迭代器和组合模式">
+<meta property="og:url" content="http://yoursite.com/2018/01/06/迭代器和组合模式/index.html">
+<meta property="og:site_name" content="Amadeus的博客">
+<meta property="og:description" content="什么是迭代器、组合模式迭代器模式：提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露内部的表示。组合模式：允许你将组合对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-06T03:08:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="迭代器和组合模式">
+<meta name="twitter:description" content="什么是迭代器、组合模式迭代器模式：提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露内部的表示。组合模式：允许你将组合对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合">
+  
+    <link rel="alternative" href="/atom.xml" title="Amadeus的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/photoImg.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Amadeus</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">每一次失败都是成长的经历，每一次挫折都是成长的过程.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Amadeus</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/css/images/photoImg.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Amadeus</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">每一次失败都是成长的经历，每一次挫折都是成长的过程.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/promiselove" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-迭代器和组合模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/06/迭代器和组合模式/" class="article-date">
+  	<time datetime="2018-01-06T02:41:50.000Z" itemprop="datePublished">2018-01-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      迭代器和组合模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是迭代器、组合模式"><a href="#什么是迭代器、组合模式" class="headerlink" title="什么是迭代器、组合模式"></a>什么是迭代器、组合模式</h3><p>迭代器模式：提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露内部的表示。<br>组合模式：允许你将组合对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合</p>
+<a id="more"></a>
+<h3 id="实现了组合模式的小例子"><a href="#实现了组合模式的小例子" class="headerlink" title="实现了组合模式的小例子"></a>实现了组合模式的小例子</h3><p>餐厅里边有供应早餐，午餐和晚餐，每餐供应的餐食又不同，我们要做的就是使用组合模式打印所有菜单<br>首先有一个所有菜单的基类，所有的菜单都必须继承自该类,里边关于菜单的操作我们都交给具体的菜单类去完成<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 菜单抽象类,所有菜单都必须实现</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">MenuComponent</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(MenuComponent menuComponent)</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(MenuComponent menuComponent)</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> MenuComponent <span class="title">getChild</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isVegetarian</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Iterator <span class="title">createIterator</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>实现组合菜单<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 菜单</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Menu</span> <span class="keyword">extends</span> <span class="title">MenuComponent</span> </span>&#123;</div><div class="line">    ArrayList menuComponents = <span class="keyword">new</span> ArrayList();</div><div class="line">    String name;</div><div class="line">    String description;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Menu</span><span class="params">(String name,String description)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">        <span class="keyword">this</span>.description = description;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(MenuComponent menuComponent)</span></span>&#123;</div><div class="line">        menuComponents.add(menuComponent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(MenuComponent menuComponent)</span></span>&#123;</div><div class="line">        menuComponents.remove(menuComponent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> MenuComponent <span class="title">getChild</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> (MenuComponent) menuComponents.get(i);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> description;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.print(<span class="string">"\n"</span>+getName());</div><div class="line">        System.out.println(<span class="string">", "</span>+getDescription());</div><div class="line">        System.out.println(<span class="string">"这里是分割线======&gt;"</span>);</div><div class="line">        Iterator iterator = menuComponents.iterator();</div><div class="line">        <span class="keyword">while</span>(iterator.hasNext())&#123;</div><div class="line">            MenuComponent menuComponent = (MenuComponent)iterator.next();</div><div class="line">            menuComponent.print();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Iterator <span class="title">createIterator</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CompositeIterator(menuComponents.iterator());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>实现菜单项<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 菜单项类</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MenuItem</span> <span class="keyword">extends</span> <span class="title">MenuComponent</span> </span>&#123;</div><div class="line">    String name;</div><div class="line">    String description;</div><div class="line">    <span class="keyword">boolean</span> vegetarian;</div><div class="line">    <span class="keyword">double</span> price;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MenuItem</span><span class="params">(String name,String description,<span class="keyword">boolean</span> vegetarian,<span class="keyword">double</span> price)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">        <span class="keyword">this</span>.description = description;</div><div class="line">        <span class="keyword">this</span>.vegetarian = vegetarian;</div><div class="line">        <span class="keyword">this</span>.price = price;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> description;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> price;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isVegetarian</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> vegetarian;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.print(<span class="string">"   "</span>+getName());</div><div class="line">        <span class="keyword">if</span>(isVegetarian())&#123;</div><div class="line">            System.out.print(<span class="string">"(v)"</span>);</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">",  "</span>+getPrice());</div><div class="line">        System.out.println(<span class="string">"   --"</span>+getDescription());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Iterator <span class="title">createIterator</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> NullIterator();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>菜单和菜单项类我们都有了，接下来要让服务员把菜单提供给客户看（打印出来）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Waitress</span> </span>&#123;</div><div class="line">    MenuComponent allMenus;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Waitress</span><span class="params">(MenuComponent allMenus)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.allMenus = allMenus;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printMenu</span><span class="params">()</span></span>&#123;</div><div class="line">        allMenus.print();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printVegetarianMenu</span><span class="params">()</span></span>&#123;</div><div class="line">        Iterator iterator = allMenus.createIterator();</div><div class="line">        System.out.println(<span class="string">"\n素食菜单\n-----"</span>);</div><div class="line">        <span class="keyword">while</span>(iterator.hasNext())&#123;</div><div class="line">            MenuComponent menuComponent = (MenuComponent)iterator.next();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span>(menuComponent.isVegetarian())&#123;</div><div class="line">                    menuComponent.print();</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">catch</span> (UnsupportedOperationException e)&#123;&#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>做一个测试类测试一下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MenuTestDrive</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        MenuComponent pancakeHouseMenu = <span class="keyword">new</span> Menu(<span class="string">"PANCAKE HOUSE MENU"</span>,<span class="string">"供应早餐"</span>);</div><div class="line">        MenuComponent dinnerMenu = <span class="keyword">new</span> Menu(<span class="string">"DINNER MENU"</span>,<span class="string">"供应午餐"</span>);</div><div class="line">        MenuComponent cafeMenu = <span class="keyword">new</span> Menu(<span class="string">"CAFE MENU"</span>,<span class="string">"供应晚餐"</span>);</div><div class="line">        MenuComponent dessertMenu = <span class="keyword">new</span> Menu(<span class="string">"DESSERT MENU"</span>,<span class="string">"餐后甜点"</span>);</div><div class="line"></div><div class="line">        MenuComponent allMenu = <span class="keyword">new</span> Menu(<span class="string">"ALL MENUS"</span>,<span class="string">"全部菜单组合"</span>);</div><div class="line">        allMenu.add(pancakeHouseMenu);</div><div class="line">        allMenu.add(dinnerMenu);</div><div class="line">        allMenu.add(cafeMenu);</div><div class="line"></div><div class="line">        dinnerMenu.add(<span class="keyword">new</span> MenuItem(<span class="string">"Pasta"</span>,<span class="string">"好吃的意大利面"</span>,<span class="keyword">true</span>,<span class="number">3.89</span>));</div><div class="line">        dinnerMenu.add(dessertMenu);</div><div class="line"></div><div class="line">        dessertMenu.add(<span class="keyword">new</span> MenuItem(<span class="string">"Apple Pie"</span>,<span class="string">"好吃的苹果饼"</span>,<span class="keyword">true</span>,<span class="number">1.59</span>));</div><div class="line"></div><div class="line">        Waitress waitress = <span class="keyword">new</span> Waitress(allMenu);</div><div class="line">        waitress.printMenu();</div><div class="line">        <span class="comment">//System.out.println("使用外部迭代器打印素食菜单");</span></div><div class="line">        <span class="comment">//waitress.printVegetarianMenu();</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>打印结果<br>ALL MENUS, 全部菜单组合<br>这里是分割线======&gt;</p>
+<p>PANCAKE HOUSE MENU, 供应早餐<br>这里是分割线======&gt;</p>
+<p>DINNER MENU, 供应午餐<br>这里是分割线======&gt;<br>   Pasta(v),  3.89<br>   –好吃的意大利面</p>
+<p>DESSERT MENU, 餐后甜点<br>这里是分割线======&gt;<br>   Apple Pie(v),  1.59<br>   –好吃的苹果饼</p>
+<p>CAFE MENU, 供应晚餐<br>这里是分割线======&gt;</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.迭代器允许访问聚合的元素，而不需要暴露它的内部结构<br>2.迭代器将遍历聚合的工作封装进一个对象中<br>3.当使用迭代器的时候，我们依赖聚合提供遍历<br>4.迭代器提供了一个通用的接口，让我们遍历聚合项，当我们的编码使用聚合的项时，就可以使用多态机制。<br>5.我们应该努力让一个类只分配一个责任<br>6.组合模式提供一个结构，可同时包容个别对像和组合对象<br>7.组合模式允许客户对个别对象以及组合对象一视同仁<br>8.组合结构内的任意对象称为组件，组件可以是组合，也可以是叶节点<br>9.在实现组合模式时，有许多设计上的折衷。要根据需要平衡透明性和安全性</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/23/模板方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">模板方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="迭代器和组合模式" data-title="迭代器和组合模式" data-url="http://yoursite.com/2018/01/06/迭代器和组合模式/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"Amadeus"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+  <section id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="迭代器和组合模式"></div>
+<script>
+  (function(){
+    var appid = 'cytlextJ9',
+    conf = 'cbb03c7918b5340e40032e087d2662af';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+</script>
+  </section>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Amadeus
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
